@@ -15,7 +15,6 @@ function welcomeToTheTable() {
   const Fname = registeredUser.firstname;
   const Lname = registeredUser.lastname;
   const Bdate = registeredUser.birthdate;
-  console.log(Fname, Lname, Bdate);
 
   // creating the html structure for te table
   const myTable = document.getElementById("tableContainer");
@@ -32,8 +31,17 @@ function welcomeToTheTable() {
   NewUserRow.append(userLname);
   NewUserRow.append(userBdate);
   myTable.appendChild(NewUserRow);
+
+  // clearing the input field for new command
+  const toClearFirst = document.getElementById("firstname");
+  const toClearSecond = document.getElementById("lastname");
+  const toClearThird = document.getElementById("birthDate");
+  toClearFirst.value = null;
+  toClearSecond.value = null;
+  toClearThird.value = null;
 }
 
+// calling the function on click
 let registerCommand = document.getElementById("registerButton");
 registerCommand.onclick = function () {
   welcomeToTheTable();

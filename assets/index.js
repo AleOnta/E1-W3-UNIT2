@@ -11,34 +11,44 @@ function welcomeToTheTable() {
   let birthdate = document.getElementById("birthDate").value;
 
   const registeredUser = new NewVisitor(userfirstname, userLastname, birthdate);
-  // Recovering the name / surname / birthdate to push into the table
-  const Fname = registeredUser.firstname;
-  const Lname = registeredUser.lastname;
-  const Bdate = registeredUser.birthdate;
 
-  // creating the html structure for te table
-  const myTable = document.getElementById("tableContainer");
-  const NewUserRow = document.createElement("tr");
-  const userFname = document.createElement("td");
-  userFname.innerText = Fname;
-  const userLname = document.createElement("td");
-  userLname.innerText = Lname;
-  const userBdate = document.createElement("td");
-  userBdate.innerText = Bdate;
+  if (registeredUser.firstname === "" || registeredUser.lastname === "" || registeredUser.birthdate === "") {
+    const myError = document.getElementById("errorContainer");
+    myError.innerText = "Please, insert a value for each input!";
+  } else {
+    // Cleaning the error div
+    const myError = document.getElementById("errorContainer");
+    myError.innerText = "";
 
-  // appending all new html elements to their respective father
-  NewUserRow.append(userFname);
-  NewUserRow.append(userLname);
-  NewUserRow.append(userBdate);
-  myTable.appendChild(NewUserRow);
+    // Recovering the name / surname / birthdate to push into the table
+    const Fname = registeredUser.firstname;
+    const Lname = registeredUser.lastname;
+    const Bdate = registeredUser.birthdate;
 
-  // clearing the input field for new command
-  const toClearFirst = document.getElementById("firstname");
-  const toClearSecond = document.getElementById("lastname");
-  const toClearThird = document.getElementById("birthDate");
-  toClearFirst.value = null;
-  toClearSecond.value = null;
-  toClearThird.value = null;
+    // creating the html structure for te table
+    const myTable = document.getElementById("tableContainer");
+    const NewUserRow = document.createElement("tr");
+    const userFname = document.createElement("td");
+    userFname.innerText = Fname;
+    const userLname = document.createElement("td");
+    userLname.innerText = Lname;
+    const userBdate = document.createElement("td");
+    userBdate.innerText = Bdate;
+
+    // appending all new html elements to their respective father
+    NewUserRow.append(userFname);
+    NewUserRow.append(userLname);
+    NewUserRow.append(userBdate);
+    myTable.appendChild(NewUserRow);
+
+    // clearing the input field for new command
+    const toClearFirst = document.getElementById("firstname");
+    const toClearSecond = document.getElementById("lastname");
+    const toClearThird = document.getElementById("birthDate");
+    toClearFirst.value = null;
+    toClearSecond.value = null;
+    toClearThird.value = null;
+  }
 }
 
 // calling the function on click

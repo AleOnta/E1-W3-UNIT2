@@ -28,7 +28,13 @@
         align-self: flex-end;
       }
 
-      div {
+      #errorContainer {
+        margin-top: 1em;
+        font-size: 1.8em;
+        background-color: lightcoral;
+      }
+
+      #tableDiv {
         margin-top: 2em;
         width: 50%;
       }
@@ -60,8 +66,8 @@
       <input type="date" name="birthdate" id="birthDate" />
       <button id="registerButton">Register</button>
     </fieldset>
-
-    <div>
+    <div id="errorContainer"></div>
+    <div id="tableDiv">
       <table>
         <tbody id="tableContainer">
           <tr>

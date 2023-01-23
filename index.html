@@ -5,8 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      form {
+        display: flex;
+        justify-content: center;
+      }
+      fieldset {
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      input[type="submit"] {
+        align-self: flex-end;
+      }
+    </style>
   </head>
   <body>
+    <form action="">
+      <fieldset>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="firstname" />
+        <label for="cognome">Cognome</label>
+        <input type="text" name="cognome" id="lastname" />
+        <label for="birthdate">Data di nascita</label>
+        <input type="date" name="birthdate" id="birthDate" />
+        <input type="submit" value="Register" />
+      </fieldset>
+
+      <div id="tableContainer"></div>
+    </form>
+
     <script src="./assets/index.js"></script>
   </body>
 </html>

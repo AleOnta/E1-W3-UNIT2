@@ -25,7 +25,7 @@ function welcomeToTheTable() {
     const Lname = registeredUser.lastname;
     const Bdate = registeredUser.birthdate;
 
-    // creating the html structure for te table
+    // creating the html structure for the table and innerTexting the value
     const myTable = document.getElementById("tableContainer");
     const NewUserRow = document.createElement("tr");
     const userFname = document.createElement("td");
@@ -35,7 +35,7 @@ function welcomeToTheTable() {
     const userBdate = document.createElement("td");
     userBdate.innerText = Bdate;
 
-    // appending all new html elements to their respective father
+    // appending all new html elements to their respective fathers
     NewUserRow.appendChild(userFname);
     NewUserRow.appendChild(userLname);
     NewUserRow.appendChild(userBdate);

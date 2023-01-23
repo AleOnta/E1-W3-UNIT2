@@ -36,9 +36,9 @@ function welcomeToTheTable() {
     userBdate.innerText = Bdate;
 
     // appending all new html elements to their respective father
-    NewUserRow.append(userFname);
-    NewUserRow.append(userLname);
-    NewUserRow.append(userBdate);
+    NewUserRow.appendChild(userFname);
+    NewUserRow.appendChild(userLname);
+    NewUserRow.appendChild(userBdate);
     myTable.appendChild(NewUserRow);
 
     // clearing the input field for new command
